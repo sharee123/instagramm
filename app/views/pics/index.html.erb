@@ -1,1 +1,5 @@
 <h2>Instagramm Applicatioins</h2>
+<% @pic.each do |pic|%>
+<%=link_to pic.title, pic%>
+<%=pic.description%>
+<%end%>
