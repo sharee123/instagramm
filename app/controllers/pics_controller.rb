@@ -20,6 +20,23 @@ class PicsController < ApplicationController
 		end
 	end
 
+	def edit
+
+	end
+
+	def update
+		if @pic.update(pic_params)
+			redirect_to @pic, notice: "your pic updated"
+		else
+			render "edit"
+		end
+	end
+
+	def destroy
+	
+
+	end
+
 	def pic_params
 		params.require(:pic).permit(:title, :description)
 	end

@@ -1,5 +1,10 @@
 <h2>Instagramm Applicatioins</h2>
+<table>
 <% @pic.each do |pic|%>
-<%=link_to pic.title, pic%>
-<%=pic.description%>
+<tr>
+<td><%=link_to pic.title, pic%></td>
+<td><%#=pic.description%></td>
+</tr>
 <%end%>
+</table>
+<%=link_to "Add your new post" ,new_pic_path%>
