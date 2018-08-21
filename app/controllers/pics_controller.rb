@@ -33,12 +33,12 @@ class PicsController < ApplicationController
 	end
 
 	def destroy
-	
-
+	@pic.destroy
+	redirect_to_root_path
 	end
 
 	def pic_params
-		params.require(:pic).permit(:title, :description)
+		params.require(:pic).permit(:title, :description,:image)
 	end
 
 	def find_pic

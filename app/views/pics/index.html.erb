@@ -5,6 +5,8 @@
 <tr>
 <td><%=link_to pic.title, pic%></td>
 <td><%#=pic.description%></td>
+<td><%=link_to (image_tag pic.image.url(:medium)), pic%></td>
+
 </tr>
 <%end%>
 </table>
