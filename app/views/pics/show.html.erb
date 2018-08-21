@@ -1,9 +1,29 @@
 <h1> Your posts</h1>
-<%=image_tag @pic.image.url%>
-
-<h2><%=@pic.title%></h2>
-<p><%=@pic.description%></p>
-<p><%=@pic.user.email%></p>
-<%=link_to "back", root_path%>
-<%=link_to "edit", edit_pic_path%>
-<%= link_to "delete",pic_path, method: :delete, data:{ confirm: "are you sure??"}%>
+<div id =pic_show class="row">
+	<div class="col-md-6 col-md-offset-3">
+			<div class="panel panel-default">
+				<div class ="panel heading pic_image">
+				<%=image_tag @pic.image.url%>
+				</div>
+				<div class="panel-body">
+				<h2><%=@pic.title%></h2>
+				<p><%=@pic.description%></p>
+				</div>
+				<div class="panel-footer">
+					<div class="row">
+						<div class="col-sm-6">
+						<p>by: <%=@pic.user.email%></p>
+						</div>
+					<div class="col-sm-6">
+						<div class="btn-group pull-right">
+						<%if user_signed_in?%>
+						<%=link_to "edit", edit_pic_path, class: "btn-btn-info"%>
+						<%= link_to "delete",pic_path, method: :delete, data:{ confirm: "are you sure??"}, class: "btn-btn-danger"%>
+						<%end%>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

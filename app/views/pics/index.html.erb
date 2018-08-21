@@ -1,13 +1,11 @@
-<h2>Instagramm Applicatioins</h2>
-
-<table>
+<h2></h2>
+<div class="col-md-6 col-md-offset-3">
+<div id =pic class="transition-enabled">
 <% @pic.each do |pic|%>
-<tr>
-<td><%=link_to pic.title, pic%></td>
-<td><%#=pic.description%></td>
-<td><%=link_to (image_tag pic.image.url(:medium)), pic%></td>
-
-</tr>
+<div class = 'box panel panel-default'>
+<h2><%=link_to pic.title, pic%></h2>
+<%=link_to (image_tag pic.image.url(:medium)), pic%>
+</div>
 <%end%>
-</table>
-<%=link_to "Add your new post" ,new_pic_path%>
+</div>
+</div>
