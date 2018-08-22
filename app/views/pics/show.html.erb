@@ -15,10 +15,16 @@
 						<p>by: <%=@pic.user.email%></p>
 						</div>
 					<div class="col-sm-6">
-						<div class="btn-group pull-right">
+						<div class="btn-group pull-right btn">
+						<%=link_to like_pic_path(@pic), method: :put, class: "btn-btn-default button2" do %>
+						<span class="glyphicon glyphicon-thumbs-up">
+							<%=@pic.get_upvotes.size%>
+						</span>
+						<%end%>
+
 						<%if user_signed_in?%>
-						<%=link_to "edit", edit_pic_path, class: "btn-btn-info"%>
-						<%= link_to "delete",pic_path, method: :delete, data:{ confirm: "are you sure??"}, class: "btn-btn-danger"%>
+						<%=link_to "edit", edit_pic_path, class: "button"%>
+						<%= link_to "delete",pic_path, method: :delete, data:{ confirm: "are you sure??"}, class: "button1"%>
 						<%end%>
 						</div>
 					</div>
