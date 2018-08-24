@@ -34,13 +34,13 @@ class PicsController < ApplicationController
 	end
 
 	def destroy
-	@pic.destroy
-	redirect_to_root_path
+		@pic.destroy
+		redirect_to root_path
 	end
 
 	def upvote
 		@pic.upvote_by current_user
-    redirect_back(fallback_location: root_path)
+	    redirect_back(fallback_location: root_path)
 	end
 
 	def pic_params

@@ -20,11 +20,11 @@
 						<span class="glyphicon glyphicon-thumbs-up">
 							<%=@pic.get_upvotes.size%>
 						</span>
-						<%end%>
-
-						<%if user_signed_in?%>
+						
+					 <% if current_user == @pic.user %>
 						<%=link_to "edit", edit_pic_path, class: "button"%>
 						<%= link_to "delete",pic_path, method: :delete, data:{ confirm: "are you sure??"}, class: "button1"%>
+						<%end%>
 						<%end%>
 						</div>
 					</div>
